@@ -19,7 +19,7 @@ describe '#listings' do
     valid_listing = build :listing, property_type: 'Warehouse'
     expect(invalid_listing).not_to be_valid
     expect(invalid_listing.errors.messages[:property_type]).to include
-      ("#{invalid_listing[:property_type]} is not a valid property type")
+    ("#{invalid_listing[:property_type]} is not a valid property type")
     expect(valid_listing).to be_valid
   end
 
@@ -51,7 +51,7 @@ describe '#listings' do
     expect(valid_listing).to be_valid
   end
 
-    it 'should validate the presence of the floor property' do
+  it 'should validate the presence of the floor property' do
     listing = build :listing, floor: ''
     expect(listing).not_to be_valid
     expect(listing.errors.messages[:floor]).to include("can't be blank")
