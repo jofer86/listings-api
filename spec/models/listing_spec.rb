@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe '#listings' do
@@ -17,6 +19,4 @@ describe '#listings' do
     expect(listing).not_to be_valid
     expect(listing.errors.messages[:property_type]).to include("#{listing[:property_type]} is not a valid property type")
   end
-
 end
-
