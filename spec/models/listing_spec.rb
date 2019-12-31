@@ -18,8 +18,8 @@ describe '#listings' do
     invalid_listing = build :listing, property_type: 'bunker'
     valid_listing = build :listing, property_type: 'Warehouse'
     expect(invalid_listing).not_to be_valid
-    expect(invalid_listing.errors.messages[:property_type]).
-      to include("#{invalid_listing[:property_type]} is not a valid property type")
+    expect(invalid_listing.errors.messages[:property_type])
+      .to include("#{invalid_listing[:property_type]} is not a valid property type")
     expect(valid_listing).to be_valid
   end
 
