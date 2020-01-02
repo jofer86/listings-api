@@ -119,5 +119,4 @@ describe '#listings' do
       )
     end
   end
-
 end
