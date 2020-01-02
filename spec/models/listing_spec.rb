@@ -105,4 +105,19 @@ describe '#listings' do
     expect(invalid_listing.errors.messages[:description])
       .to include('Description is too short')
   end
+
+  describe '.latest' do
+    it 'should list the lastest listing first' do
+      old_listing = create :listing
+      newer_listing = create :listing
+      expect(Listing.latest).to eq(
+        [newer_listing, old_listing]
+      )
+      old_listing.update_column :created_at, Time.now
+      expect(Listing.latest).to eq(
+        [old_listing, newer_listing]
+      )
+    end
+  end
+
 end
