@@ -9,6 +9,7 @@ class Listing < ApplicationRecord
   validates :meters, presence: true, numericality: { only_integer: true }
   validates :price, presence: true, numericality: { only_integer: true }
   validates :description, presence: true,
+                          uniqueness: true,
                           length: { minimum: 50, message: 'Description is too short' }
 
   scope :latest, -> { order(created_at: :desc) }

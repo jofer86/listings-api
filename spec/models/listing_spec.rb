@@ -106,6 +106,12 @@ describe '#listings' do
       .to include('Description is too short')
   end
 
+  it 'should validate for the uniqueness of each description' do
+    listing = create :listing
+    invalid_listing = build :listing, description: listing.description
+    expect(invalid_listing).not_to be_valid
+  end
+
   describe '.latest' do
     it 'should list the lastest listing first' do
       old_listing = create :listing
