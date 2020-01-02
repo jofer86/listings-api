@@ -9,5 +9,6 @@ FactoryBot.define do
     meters { 1 }
     sequence(:description) { |n| "This is a short and valid description of the listing #{n}" }
     price { 1 }
+    sequence(:slug) { |n| "this-slug-is-gonna-be-a-link-to-an-image-#{n}" }
   end
 end

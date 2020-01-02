@@ -112,6 +112,18 @@ describe '#listings' do
     expect(invalid_listing).not_to be_valid
   end
 
+  it 'should validate the presence of the slug property' do
+    listing = build :listing, slug: ''
+    expect(listing).not_to be_valid
+    expect(listing.errors.messages[:slug]).to include("can't be blank")
+  end
+
+  it 'should validate for the uniqueness of each slug' do
+    listing = create :listing
+    invalid_listing = build :listing, slug: listing.slug
+    expect(invalid_listing).not_to be_valid
+  end
+  
   describe '.latest' do
     it 'should list the lastest listing first' do
       old_listing = create :listing

@@ -11,6 +11,7 @@ class Listing < ApplicationRecord
   validates :description, presence: true,
                           uniqueness: true,
                           length: { minimum: 50, message: 'Description is too short' }
+  validates :slug, presence: true, uniqueness: true
 
   scope :latest, -> { order(created_at: :desc) }
 end
