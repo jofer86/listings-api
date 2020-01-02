@@ -103,7 +103,7 @@ describe '#listings' do
     invalid_listing = build :listing, description: 'This is not a valid one'
     expect(invalid_listing).not_to be_valid
     expect(invalid_listing.errors.messages[:description])
-    .to include('Description is too short, minimum characters allowed are 50')
+      .to include('Description is too short, minimum characters allowed are 50')
   end
 
 end
