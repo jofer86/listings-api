@@ -92,4 +92,18 @@ describe '#listings' do
     expect(invalid_listing.errors.messages[:price]).to include('is not a number')
     expect(valid_listing).to be_valid
   end
+
+  it 'should validate the presence of the description property' do
+    listing = build :listing, description: ''
+    expect(listing).not_to be_valid
+    expect(listing.errors.messages[:description]).to include("can't be blank")
+  end
+
+  it 'should validate the minimun length of the description property to 50 characters' do
+    invalid_listing = build :listing, description: 'This is not a valid one'
+    expect(invalid_listing).not_to be_valid
+    expect(invalid_listing.errors.messages[:description])
+    .to include('Description is too short, minimum characters allowed are 50')
+  end
+
 end

@@ -7,7 +7,7 @@ FactoryBot.define do
     bathrooms { 1 }
     floor { 1 }
     meters { 1 }
-    description { 'MyText' }
+    description { 'This is a short and valid description of the listing' }
     price { 1 }
   end
 end

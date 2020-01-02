@@ -8,4 +8,6 @@ class Listing < ApplicationRecord
   validates :floor, presence: true, numericality: { only_integer: true }
   validates :meters, presence: true, numericality: { only_integer: true }
   validates :price, presence: true, numericality: { only_integer: true }
+  validates :description, presence: true, length: { minimum: 50,
+                                                    message: 'Description is too short, minimum characters allowed are 50'}
 end
