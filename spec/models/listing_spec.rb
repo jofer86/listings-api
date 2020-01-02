@@ -123,7 +123,7 @@ describe '#listings' do
     invalid_listing = build :listing, slug: listing.slug
     expect(invalid_listing).not_to be_valid
   end
-  
+
   describe '.latest' do
     it 'should list the lastest listing first' do
       old_listing = create :listing

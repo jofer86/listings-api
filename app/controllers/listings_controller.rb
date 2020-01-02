@@ -1,22 +1,18 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 class ListingsController < ApplicationController
   def index
+    listings = Listing.all
+    render json: listings
   end
 
-  def show
+  def show; end
 
-  end
+  def update; end
 
-  def update
+  def create; end
 
-  end
-
-  def create
-
-  end
-
-  def destroy
-
-  end
+  def destroy; end
 end
