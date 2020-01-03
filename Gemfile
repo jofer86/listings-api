@@ -26,6 +26,7 @@ gem 'active_model_serializers', '~> 0.10.10'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'factory_bot_rails'
 gem 'kaminari'
+gem 'octokit', '~> 4.15'
 gem 'rspec-rails'
 gem 'rubocop'
 

@@ -11,9 +11,9 @@ describe ListingsController do
     end
 
     it 'Should return proper json' do
-      listings = create_list :listing, 2
+      create_list :listing, 2
       subject
-      listings.each_with_index do |listing, i|
+      Listing.latest.each_with_index do |listing, i|
         expect(json_data[i]['attributes']).to eq(
           'property-type' => listing.property_type,
           'bedrooms' => listing.bedrooms,
@@ -25,7 +25,14 @@ describe ListingsController do
           'slug' => listing.slug
         )
       end
-      expect(json_data)
+    end
+
+    it 'should return articles in the proper order' do
+      old_listing = create :listing
+      newer_listing = create :listing
+      subject
+      expect(json_data.first['id']).to eq(newer_listing.id.to_s)
+      expect(json_data.last['id']).to eq(old_listing.id.to_s)
     end
   end
 end
