@@ -16,6 +16,7 @@ class UserAuthenticator
     )
     token = client.exchange_code_for_token(code)
     raise AuthenticationError if token.try(:error).present?
+
     user_client = Octokit::Client.new(
       access_token: token
     )
