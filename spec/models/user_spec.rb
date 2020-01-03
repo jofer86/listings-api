@@ -23,6 +23,5 @@ RSpec.describe User, type: :model do
       other_user.login = 'newlogin'
       expect(other_user).to be_valid
     end
-
   end
 end
