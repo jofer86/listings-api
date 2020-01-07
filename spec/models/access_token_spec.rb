@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe AccessToken, type: :model do
@@ -31,7 +33,7 @@ RSpec.describe AccessToken, type: :model do
 
     it 'should generate an unique token' do
       user = create :user
-      expect{ user.create_access_token }.to change{ AccessToken.count }.by(1)
+      expect { user.create_access_token }.to change { AccessToken.count }.by(1)
     end
   end
 end
