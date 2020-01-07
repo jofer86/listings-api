@@ -2,6 +2,15 @@
 
 require 'rails_helper'
 
+let(:user_data) do
+  {
+    login: 'jsmith1',
+    url: 'http://example.com',
+    avatar_url: 'http://example.com/avatar',
+    name: 'john smith'
+  }
+end
+
 describe UserAuthenticator do
   describe '#perform' do
     let(:authenticator) { described_class.new('sample_code') }
@@ -27,15 +36,6 @@ describe UserAuthenticator do
     end
 
     context 'when code is correct' do
-      let(:user_data) do
-        {
-          login: 'jsmith1',
-          url: 'http://example.com',
-          avatar_url: 'http://example.com/avatar',
-          name: 'john smith'
-        }
-      end
-
       before do
         allow_any_instance_of(Octokit::Client).to receive(
           :exchange_code_for_token

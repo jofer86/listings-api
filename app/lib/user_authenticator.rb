@@ -17,7 +17,7 @@ class UserAuthenticator
                       user.access_token
                     else
                       user.create_access_token
-             end
+                    end
   end
 
   private
