@@ -6,6 +6,7 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
+    - "spec/**/*"
   DisplayCopNames: true
 
 Layout/LineLength:
@@ -19,7 +20,7 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
-  ExcludedMethods: ["describe"]
+  ExcludedMethods: ["describe", "context"]
 
 Style/Documentation:
   Enabled: false

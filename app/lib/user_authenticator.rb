@@ -13,7 +13,7 @@ class UserAuthenticator
     raise AuthenticationError if token.try(:error).present?
 
     prepare_user
-    @access_token = if user.acces_token.present?
+    @access_token = if user.access_token.present?
                       user.access_token
                     else
                       user.create_access_token
