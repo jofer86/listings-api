@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::API
   rescue_from UserAuthenticator::AuthenticationError, with: :authentication_error
+
   private
 
   def authentication_error
