@@ -39,7 +39,7 @@ RSpec.describe AccessToken, type: :model do
     it 'should generate token once' do
       user = create :user
       access_token = user.create_access_token
-      expect(access_token.toke).to eq(access_token.reload)
+      expect(access_token.token).to eq(access_token.reload.token)
     end
   end
 end
