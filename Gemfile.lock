@@ -82,6 +82,7 @@ GEM
       railties (>= 4.2.0)
     faraday (1.0.0)
       multipart-post (>= 1.2, < 3)
+    ffi (1.11.3)
     ffi (1.11.3-x64-mingw32)
     formatador (0.2.5)
     globalid (0.4.2)
@@ -132,10 +133,13 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.13.0)
+    msgpack (1.3.1)
     msgpack (1.3.1-x64-mingw32)
     multipart-post (2.1.1)
     nenv (0.3.0)
     nio4r (2.5.2)
+    nokogiri (1.10.7)
+      mini_portile2 (~> 2.4.0)
     nokogiri (1.10.7-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     notiffany (0.1.3)
@@ -147,6 +151,7 @@ GEM
     parallel (1.19.1)
     parser (2.7.0.1)
       ast (~> 2.4.0)
+    pg (1.2.0)
     pg (1.2.0-x64-mingw32)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -247,6 +252,7 @@ GEM
     zeitwerk (2.2.2)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
